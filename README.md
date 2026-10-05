@@ -1,5 +1,7 @@
 # URL Alias Redirect Service
 
+[English](./README_EN.md)
+
 一个 Windows 本地 URL 别名重定向服务，让你在浏览器地址栏输入自定义短名称即可跳转到目标网址。
 
 ## 功能特性
