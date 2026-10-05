@@ -7,13 +7,13 @@ if (Test-Path $certPath) {
     exit 0
 }
 
+if ($names.Count -eq 0) {
+    Write-Host "No aliases configured in aliases.json, skipping certificate generation."
+    exit 0
+}
+
 $dnsParams = @()
-$first = $true
 foreach ($name in $names) {
-    if ($first) {
-        $cn = $name
-        $first = $false
-    }
     $dnsParams += $name
 }
 

@@ -18,7 +18,7 @@ if %errorlevel% neq 0 (
 set TASK_NAME=URL-Alias-Redirect
 
 echo [1/4] Stopping service...
-taskkill /f /im node.exe /fi "WINDOWTITLE eq *Redirect*" >nul 2>&1
+powershell -NoProfile -Command "Get-NetTCPConnection -LocalPort 5666,5667 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }"
 
 echo [2/4] Removing auto-start...
 schtasks /Delete /TN "%TASK_NAME%" /F >nul 2>&1

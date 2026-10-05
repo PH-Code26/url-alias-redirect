@@ -5,4 +5,5 @@ Set FSO = CreateObject("Scripting.FileSystemObject")
 dir = FSO.GetParentFolderName(WScript.ScriptFullName)
 WshShell.CurrentDirectory = dir
 
-WshShell.Run "node server.js", 0, False
+logFile = dir & "\service.log"
+WshShell.Run "cmd /c node server.js >>""" & logFile & """ 2>&1", 0, False
