@@ -35,7 +35,7 @@ echo   [OK]  (use https-on.bat to add 443 forwarding)
 
 echo.
 echo [4/4] Setting auto-start on login...
-schtasks /Create /TN "%TASK_NAME%" /TR "wscript.exe \"%~dp0start-silent.vbs\"" /SC ONLOGON /RL HIGHEST /F >nul 2>&1
+schtasks /Create /TN "%TASK_NAME%" /TR "powershell.exe -ExecutionPolicy Bypass -File \"%~dp0start-silent.ps1\"" /SC ONLOGON /RL HIGHEST /F >nul 2>&1
 if %errorlevel% equ 0 (echo   [OK]) else (echo   [SKIP] may already exist)
 
 echo.
@@ -44,7 +44,7 @@ echo    Setup complete, starting service...
 echo ==============================================
 echo.
 
-wscript "%~dp0start-silent.vbs"
+powershell -ExecutionPolicy Bypass -File "%~dp0start-silent.ps1"
 timeout /t 2 /nobreak >nul
 
 echo   Verify: https://localhost:5667

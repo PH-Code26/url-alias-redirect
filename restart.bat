@@ -12,6 +12,6 @@ echo Stopping old instance...
 powershell -NoProfile -Command "Get-NetTCPConnection -LocalPort 5666,5667 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; Write-Host '  done'"
 timeout /t 1 /nobreak >nul
 
-wscript "%~dp0start-silent.vbs"
+powershell -ExecutionPolicy Bypass -File "%~dp0start-silent.ps1"
 echo Service restarted.
 pause

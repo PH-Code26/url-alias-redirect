@@ -84,7 +84,7 @@ Visit `https://localhost:5667`, accept the self-signed cert warning, then type a
 | `setup.bat` | One-click setup (requires Admin) |
 | `cleanup.bat` | One-click uninstall (requires Admin) |
 | `start.bat` | Foreground launch (with terminal window) |
-| `start-silent.vbs` | Background launch (used by auto-start) |
+| `start-silent.ps1` | Background launch (used by auto-start) |
 | `restart.bat` | Restart the service |
 | `https-on.bat` | Enable 443→5667 port forwarding |
 | `https-off.bat` | Disable 443 port forwarding |

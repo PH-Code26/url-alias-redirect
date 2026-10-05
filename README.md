@@ -53,7 +53,7 @@
 | `setup.bat` | 一键安装脚本（需管理员权限） |
 | `cleanup.bat` | 一键卸载脚本（需管理员权限） |
 | `start.bat` | 前台启动服务（带终端窗口） |
-| `start-silent.vbs` | 后台静默启动（开机自启调用） |
+| `start-silent.ps1` | 后台静默启动（开机自启调用） |
 | `restart.bat` | 重启服务 |
 | `https-on.bat` | 开启 443→5667 端口转发 |
 | `https-off.bat` | 关闭 443 端口转发 |
